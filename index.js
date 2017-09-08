@@ -3,13 +3,13 @@ var fetch = require('node-fetch');
 var express = require('express');
 var bodyParser=require('body-parser');
 var app = express();
-//var reqnew = require('request');
+var reqnew = require('request');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", function (req, res) {
-    // reqnew('http://widgets.fabulously40.com/horoscope.json?sign=capricorn', function (error, response, body) {
-    // res.send(JSON.stringify(body));
-    // });
+    reqnew('http://widgets.fabulously40.com/horoscope.json?sign=capricorn', function (error, response, body) {
+    res.send(JSON.stringify(body));
+    });
     // request('http://widgets.fabulously40.com/horoscope.json?sign=capricorn')
     //     .then(function (htmlString) {
     //        res.send(JSON.stringify(htmlString)); 
