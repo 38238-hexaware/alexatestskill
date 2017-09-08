@@ -14,6 +14,7 @@ app.get("/", function (req, res) {
         .catch(function (err) {
             res.send(JSON.stringify(err)); 
         });
+res.send('srini');
 })
 
 // const options = {  
