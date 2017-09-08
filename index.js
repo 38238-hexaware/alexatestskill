@@ -7,13 +7,13 @@ app.get("/", function (req, res) {
     // reqnew('http://widgets.fabulously40.com/horoscope.json?sign=capricorn', function (error, response, body) {
     // res.send(JSON.stringify(body));
     // });
-    request('http://widgets.fabulously40.com/horoscope.json?sign=capricorn')
-        .then(function (htmlString) {
-           res.send(JSON.stringify(htmlString)); 
-        })
-        .catch(function (err) {
-            res.send(JSON.stringify(err)); 
-        });
+    // request('http://widgets.fabulously40.com/horoscope.json?sign=capricorn')
+    //     .then(function (htmlString) {
+    //        res.send(JSON.stringify(htmlString)); 
+    //     })
+    //     .catch(function (err) {
+    //         res.send(JSON.stringify(err)); 
+    //     });
 res.send('srini');
 })
 
