@@ -1,12 +1,19 @@
-const request = require('request-promise')  ;
+const request = require('request-promise');
 var fetch = require('node-fetch');
-var express=require('express');
-var app=express();
+var express = require('express');
+var app = express();
 var reqnew = require('request');
-app.get("/",function(req,res){
-reqnew('http://widgets.fabulously40.com/horoscope.json?sign=capricorn', function (error, response, body) {
-res.send(JSON.stringify(body));
-});
+app.get("/", function (req, res) {
+    // reqnew('http://widgets.fabulously40.com/horoscope.json?sign=capricorn', function (error, response, body) {
+    // res.send(JSON.stringify(body));
+    // });
+    rp('http://www.google.com')
+        .then(function (htmlString) {
+           res.send(JSON.stringify(htmlString)); 
+        })
+        .catch(function (err) {
+            res.send(JSON.stringify(err)); 
+        });
 })
 
 // const options = {  
@@ -39,6 +46,6 @@ res.send(JSON.stringify(body));
 //         console.log(body);
 //     });
 
-app.listen("3000",function(){
+app.listen("3000", function () {
     console.log('listeneing at the port');
 })
